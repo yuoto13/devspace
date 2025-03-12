@@ -47,20 +47,36 @@
         </div>
     </header>
     
-    <!-- Hero Section with particle background -->
+    <!-- Hero Section с интерактивным кодом -->
     <section class="hero">
-        <div id="particles-js"></div>
+        <div class="tech-background">
+            <div class="code-animation">
+                <pre class="code-block"><code class="language-javascript">function <span class="code-highlight">connectDevelopers</span>() {
+  const community = new <span class="code-highlight">DevSpace</span>();
+  
+  community.<span class="code-highlight">shareProjects</span>();
+  community.<span class="code-highlight">provideFeedback</span>();
+  community.<span class="code-highlight">findCollaborators</span>();
+  
+  return <span class="code-highlight">growTogether</span>(community);
+}</code></pre>
+                <div class="tech-icons">
+                    <div class="tech-icon html-icon" data-icon="HTML"></div>
+                    <div class="tech-icon css-icon" data-icon="CSS"></div>
+                    <div class="tech-icon js-icon" data-icon="JS"></div>
+                    <div class="tech-icon react-icon" data-icon="React"></div>
+                    <div class="tech-icon node-icon" data-icon="Node"></div>
+                    <div class="tech-icon python-icon" data-icon="Python"></div>
+                </div>
+                <div class="nodes-animation"></div>
+            </div>
+        </div>
         <div class="container">
             <h1 class="gradient-heading tracking-in">Объединяем разработчиков по всему миру</h1>
             <p class="fade-in-delay blur-in">DevSpace — социальная сеть для разработчиков, где можно демонстрировать свои проекты, делиться опытом и находить единомышленников</p>
             <div class="hero-buttons fade-in-delay-2">
                 <a href="signup.html" class="btn btn-primary pulse-btn">Присоединиться</a>
                 <a href="#features" class="btn btn-outline glow-on-hover">Узнать больше</a>
-            </div>
-            <div class="hero-image-container">
-                <div class="floating">
-                    <img src="/api/placeholder/1000/600" alt="DevSpace Platform Preview" class="hero-image morph-shadow" />
-                </div>
             </div>
         </div>
     </section>
@@ -81,7 +97,6 @@
                     
                     <!-- Мини-демо при наведении -->
                     <div class="feature-demo">
-                        <div class="demo-close">✕</div>
                         <div class="demo-content">
                             <div class="projects-demo">
                                 <div class="project-card">
@@ -133,7 +148,6 @@
                     
                     <!-- Мини-демо при наведении -->
                     <div class="feature-demo">
-                        <div class="demo-close">✕</div>
                         <div class="demo-content">
                             <div class="search-demo">
                                 <div class="search-bar">
@@ -186,7 +200,6 @@
                     
                     <!-- Мини-демо профиля при наведении -->
                     <div class="feature-demo">
-                        <div class="demo-close">✕</div>
                         <div class="demo-content">
                             <div class="gamification-demo">
                                 <div class="profile-header">
@@ -242,7 +255,6 @@
                     
                     <!-- Мини-демо при наведении -->
                     <div class="feature-demo">
-                        <div class="demo-close">✕</div>
                         <div class="demo-content">
                             <div class="activity-demo">
                                 <div class="activity-filters">
@@ -291,7 +303,6 @@
                     
                     <!-- Мини-демо при наведении -->
                     <div class="feature-demo">
-                        <div class="demo-close">✕</div>
                         <div class="demo-content">
                             <div class="community-demo">
                                 <div class="community-stats">
@@ -347,7 +358,6 @@
                     
                     <!-- Мини-демо при наведении -->
                     <div class="feature-demo">
-                        <div class="demo-close">✕</div>
                         <div class="demo-content">
                             <div class="top-projects-demo">
                                 <div class="top-selector">
@@ -522,10 +532,9 @@
     </footer>
     
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/particles-config.js"></script>
     <script src="js/main.js"></script>
     <script src="js/theme-switcher.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/tech-animation.js"></script>
 </body>
 </html>

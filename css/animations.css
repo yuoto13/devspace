@@ -363,157 +363,7 @@
     animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-/* Button Animations */
-@keyframes pulse-btn {
-    0% {
-        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(108, 92, 231, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0);
-    }
-}
-
-.pulse-btn {
-    animation: pulse-btn 2s infinite;
-}
-
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 20px rgba(108, 92, 231, 0.8);
-    }
-}
-
-.glow-on-hover:hover {
-    animation: glow 1.5s infinite alternate;
-}
-
-/* Special Effects */
-@keyframes ripple {
-    0% {
-        opacity: 0;
-        transform: scale(1);
-    }
-    30% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1.5);
-    }
-}
-
-.ripple-effect {
-    position: relative;
-    overflow: hidden;
-}
-
-.ripple-effect::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: inherit;
-    opacity: 0;
-    transform: scale(1.3);
-    animation: ripple 2s infinite;
-}
-
-@keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-
-.floating {
-    animation: floating 6s ease-in-out infinite;
-}
-
-/* Theme Switch Animations */
-@keyframes dayTransition {
-    0% { background: linear-gradient(to right, #373737, #5e5e5e); }
-    100% { background: linear-gradient(to right, #f5de19, #f78400); }
-}
-
-@keyframes nightTransition {
-    0% { background: linear-gradient(to right, #f5de19, #f78400); }
-    100% { background: linear-gradient(to right, #373737, #5e5e5e); }
-}
-
-.theme-transition {
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.day-animation {
-    animation: dayTransition 1.5s ease;
-}
-
-.night-animation {
-    animation: nightTransition 1.5s ease;
-}
-
-@keyframes rippleEffect {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
-
-.ripple {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
-    border-radius: inherit;
-    transform: scale(0);
-    opacity: 1;
-    animation: rippleEffect 0.6s ease-out;
-    z-index: 0;
-}
-
-/* Стили мини-демо при наведении */
-.feature-card {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-/* Заменяем 3D-эффект на более современное решение */
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(0, 206, 201, 0.1));
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(108, 92, 231, 0.2);
-}
-
-.feature-card:hover::before {
-    opacity: 1;
-}
+/* Улучшенные стили для мини-демо */
 
 /* Базовые стили для всплывающих мини-демо */
 .feature-demo {
@@ -527,14 +377,15 @@
     -webkit-backdrop-filter: blur(5px);
     border-radius: var(--radius);
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Изменено с center на flex-start */
     justify-content: center;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px); /* Уменьшено с 20px для более быстрой анимации */
     pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    padding: 1.5rem;
+    transition: all 0.3s ease; /* Ускорено с 0.4s до 0.3s */
+    padding: 1.2rem;
     z-index: 10;
+    overflow: hidden; /* Скрываем переполнение */
 }
 
 /* Темная тема для мини-демо */
@@ -546,96 +397,209 @@
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку */
 }
 
-/* Контейнер для демо-контента */
+/* Убираем кнопку закрытия */
+.demo-close {
+    display: none;
+}
+
+/* Делаем контейнер для демо-контента скроллируемым */
 .demo-content {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    max-height: 100%;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+    padding-right: 5px; /* Добавляем отступ для скроллбара */
+    scrollbar-width: thin; /* Тонкий скроллбар для Firefox */
+    scrollbar-color: var(--primary-color) transparent; /* Цвет скроллбара для Firefox */
 }
 
-/* Кнопка закрытия мини-демо */
-.demo-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+/* Стили для скроллбара Chrome/Safari */
+.demo-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.demo-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.demo-content::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Более компактные стили для мини-демо карточек */
+
+/* Стили для демо проектов */
+.projects-demo {
+    width: 100%;
+    padding-top: 0.5rem;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
     background-color: var(--bg-secondary);
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateX(5px);
+}
+
+.project-preview {
+    width: 40px; /* Уменьшено с 50px */
+    height: 40px; /* Уменьшено с 50px */
+    border-radius: var(--radius);
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0.7;
+    font-size: 18px; /* Уменьшено с 20px */
+}
+
+.project-info h4 {
+    margin: 0;
     font-size: 14px;
 }
 
-.demo-close:hover {
-    opacity: 1;
-    transform: rotate(90deg);
+.project-info p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: var(--text-secondary);
 }
 
-/* Стили для мини-профиля (геймификация) */
+.project-stats {
+    display: flex;
+    margin-top: 3px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    margin-right: 8px;
+    color: var(--text-secondary);
+}
+
+/* Стили для демо поиска */
+.search-demo {
+    width: 100%;
+    padding-top: 0.5rem;
+}
+
+.search-bar {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px 8px 35px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.search-category {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--text-secondary);
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius);
+    margin-bottom: 7px;
+    transition: all 0.3s ease;
+}
+
+.result-item:hover {
+    transform: translateX(5px);
+}
+
+.result-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+/* Стили для профиля геймификации */
 .gamification-demo {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top: 0.5rem;
 }
 
 .profile-header {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .profile-avatar {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--gradient-start, var(--primary-color)), var(--gradient-end, var(--secondary-color)));
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    margin-right: 15px;
+    margin-right: 12px;
 }
 
 .profile-info h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .profile-info p {
-    margin: 5px 0 0;
-    font-size: 14px;
+    margin: 2px 0 0;
+    font-size: 13px;
     color: var(--text-secondary);
 }
 
 .profile-level {
     background-color: var(--bg-secondary);
-    border-radius: 20px;
-    padding: 5px 12px;
-    font-size: 14px;
+    border-radius: 15px;
+    padding: 3px 10px;
+    font-size: 12px;
     font-weight: bold;
     color: var(--primary-color);
     display: inline-flex;
     align-items: center;
-    margin-top: 5px;
-}
-
-.achievements-list {
-    width: 100%;
-    margin-top: 15px;
+    margin-top: 4px;
 }
 
 .achievement-item {
@@ -648,13 +612,9 @@
     transition: all 0.3s ease;
 }
 
-.achievement-item:hover {
-    transform: translateX(5px);
-}
-
 .achievement-icon {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background-color: var(--primary-color);
     color: white;
@@ -662,179 +622,38 @@
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-    font-size: 14px;
-}
-
-.achievement-info {
-    flex: 1;
-}
-
-.achievement-info h4 {
-    margin: 0;
-    font-size: 14px;
-}
-
-.achievement-info p {
-    margin: 3px 0 0;
-    font-size: 12px;
-    color: var(--text-secondary);
+    font-size: 13px;
 }
 
 .achievement-progress {
     width: 100%;
-    height: 5px;
+    height: 4px;
     background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    margin-top: 5px;
+    border-radius: 2px;
+    margin-top: 4px;
     overflow: hidden;
 }
 
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(to right, var(--gradient-start, var(--primary-color)), var(--gradient-end, var(--secondary-color)));
-    width: 75%;
-}
-
-/* Стили для демо проектов */
-.projects-demo {
-    width: 100%;
-}
-
-.project-card {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: var(--bg-secondary);
-    border-radius: var(--radius);
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateX(5px);
-}
-
-.project-preview {
-    width: 50px;
-    height: 50px;
-    border-radius: var(--radius);
-    background-color: var(--primary-color);
-    margin-right: 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-
-.project-info {
-    flex: 1;
-}
-
-.project-stats {
-    display: flex;
-    margin-top: 5px;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    margin-right: 10px;
-    color: var(--text-secondary);
-}
-
-.stat-icon {
-    margin-right: 4px;
-    font-size: 12px;
-}
-
-/* Стили для демо поиска */
-.search-demo {
-    width: 100%;
-}
-
-.search-bar {
-    position: relative;
-    margin-bottom: 15px;
-}
-
-.search-input {
-    width: 100%;
-    padding: 10px 15px 10px 40px;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-secondary);
-    font-size: 16px;
-}
-
-.search-results {
-    width: 100%;
-}
-
-.search-category {
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--text-secondary);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-}
-
-.result-item {
-    display: flex;
-    align-items: center;
-    padding: 8px 10px;
-    background-color: var(--bg-secondary);
-    border-radius: var(--radius);
-    margin-bottom: 8px;
-    transition: all 0.3s ease;
-}
-
-.result-item:hover {
-    transform: translateX(5px);
-}
-
-.result-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    font-size: 14px;
-}
-
-/* Стили для демо активности */
+/* Стили для ленты активности */
 .activity-demo {
     width: 100%;
+    padding-top: 0.5rem;
 }
 
 .activity-filters {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
 }
 
 .filter-button {
-    padding: 5px 12px;
+    padding: 4px 10px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 15px;
-    font-size: 12px;
-    margin-right: 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    margin-right: 6px;
+    margin-bottom: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -847,13 +666,13 @@
 
 .activity-timeline {
     position: relative;
-    padding-left: 20px;
+    padding-left: 18px;
 }
 
 .timeline-line {
     position: absolute;
     top: 0;
-    left: 5px;
+    left: 4px;
     width: 2px;
     height: 100%;
     background-color: var(--border-color);
@@ -861,34 +680,52 @@
 
 .activity-item {
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 12px;
 }
 
 .activity-dot {
     position: absolute;
     top: 0;
-    left: -20px;
-    width: 10px;
-    height: 10px;
+    left: -18px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: var(--primary-color);
 }
 
+.activity-time {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
 .activity-content {
-    padding: 10px;
+    padding: 8px;
     background-color: var(--bg-secondary);
     border-radius: var(--radius);
 }
 
-/* Стили для демо сообщества */
+.activity-content h4 {
+    margin: 0;
+    font-size: 13px;
+}
+
+.activity-content p {
+    margin: 3px 0 0;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* Стили для сообщества */
 .community-demo {
     width: 100%;
+    padding-top: 0.5rem;
 }
 
 .community-stats {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .community-stat {
@@ -897,65 +734,67 @@
 }
 
 .stat-value {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: var(--primary-color);
 }
 
-.member-list {
-    width: 100%;
+.stat-label {
+    font-size: 11px;
+    color: var(--text-secondary);
 }
 
 .member-item {
     display: flex;
     align-items: center;
-    padding: 8px 10px;
+    padding: 7px 8px;
     background-color: var(--bg-secondary);
     border-radius: var(--radius);
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     transition: all 0.3s ease;
 }
 
 .member-avatar {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--gradient-start, var(--primary-color)), var(--gradient-end, var(--secondary-color)));
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     margin-right: 10px;
 }
 
 .connection-button {
-    padding: 4px 8px;
+    padding: 3px 7px;
     background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 15px;
-    font-size: 12px;
+    border-radius: 12px;
+    font-size: 11px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-/* Стили для топ проектов */
+/* Стили для топов проектов */
 .top-projects-demo {
     width: 100%;
+    padding-top: 0.5rem;
 }
 
 .top-selector {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .top-tab {
     flex: 1;
     text-align: center;
-    padding: 8px;
-    font-size: 13px;
+    padding: 6px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--text-secondary);
     border-bottom: 2px solid transparent;
@@ -968,62 +807,212 @@
     border-bottom-color: var(--primary-color);
 }
 
-.top-list {
-    width: 100%;
-}
-
 .top-item {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
     background-color: var(--bg-secondary);
     border-radius: var(--radius);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: all 0.3s ease;
 }
 
 .top-rank {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--gradient-start, var(--primary-color)), var(--gradient-end, var(--secondary-color)));
     color: white;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .top-badge {
     display: inline-block;
-    padding: 2px 6px;
+    padding: 1px 5px;
     background-color: var(--primary-color);
     color: white;
-    font-size: 10px;
-    border-radius: 10px;
-    margin-left: 8px;
+    font-size: 9px;
+    border-radius: 8px;
+    margin-left: 6px;
 }
 
-.top-rating {
-    font-size: 12px;
-    font-weight: bold;
+/* Улучшения для появления элементов */
+@keyframes fadeInQuick {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-demo.active .demo-content > * {
+    animation: fadeInQuick 0.2s ease forwards;
+}
+
+/* Предотвращаем случайные клики при анимации */
+.feature-demo:not(.active) {
+    pointer-events: none !important;
+}
+
+/* Стили для технологического фона в шапке */
+.tech-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.code-animation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.08;
+}
+
+.code-block {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    transform: scale(1.2);
+}
+
+.code-highlight {
     color: var(--primary-color);
+    font-weight: bold;
+}
+
+.nodes-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.node {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(108, 92, 231, 0.2) 0%, rgba(108, 92, 231, 0) 70%);
+    border-radius: 50%;
+}
+
+.connection {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(108, 92, 231, 0.2), rgba(0, 206, 201, 0.2));
+    transform-origin: 0 0;
+    z-index: -1;
+}
+
+.tech-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tech-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 14px;
+    opacity: 0;
+    animation: techIconFloat 6s ease-in-out infinite, fadeIn 1s forwards;
 }
 
-/* Анимация для мигающего курсора */
-.cursor-blink {
-    animation: blink 1s infinite;
+.tech-icon::before {
+    content: attr(data-icon);
+    position: absolute;
+    z-index: 1;
 }
 
-@keyframes blink {
-    0%, 100% {
-        border-color: var(--text-color);
-    }
-    50% {
-        border-color: transparent;
-    }
+.tech-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(108, 92, 231, 0.15) 0%, rgba(108, 92, 231, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+@keyframes techIconFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.html-icon {
+    top: 15%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.css-icon {
+    top: 60%;
+    left: 15%;
+    animation-delay: 0.5s;
+}
+
+.js-icon {
+    top: 25%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.react-icon {
+    top: 70%;
+    right: 25%;
+    animation-delay: 1.5s;
+}
+
+.node-icon {
+    top: 40%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.python-icon {
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 2.5s;
 }
