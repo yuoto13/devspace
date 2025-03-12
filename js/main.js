@@ -32,24 +32,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // Initial check for elements in viewport
     setTimeout(handleScrollAnimations, 100);
     
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
     // Form submission handling
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
@@ -93,7 +75,23 @@ window.addEventListener('DOMContentLoaded', () => {
             // window.location.href = 'login.html';
         });
     }
+    
+    // Add animated underline effect to navigation links
+    const navLinks = document.querySelectorAll('.hover-underline');
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.classList.add('active');
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.classList.remove('active');
+        });
+    });
 });
 
-// Handle scroll events
-window.addEventListener('scroll', handleScrollAnimations);
+// Handle scroll events with debounce for better performance
+let scrollTimeout;
+window.addEventListener('scroll', function() {
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(handleScrollAnimations, 10);
+});
