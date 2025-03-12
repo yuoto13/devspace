@@ -1,0 +1,27 @@
+:root.light-theme {
+    --primary-color: #4361ee;
+    --primary-hover: #3a56d4;
+    --secondary-color: #4cc9f0;
+    --text-color: #333333;
+    --text-secondary: #666666;
+    --bg-color: #ffffff;
+    --bg-secondary: #f5f8ff;
+    --border-color: #eaeaea;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Light Theme Specific Styles */
+.light-theme body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.light-theme header {
+    background-color: var(--bg-color);
+}
+
+.light-theme .feature-card,
+.light-theme .testimonial-card,
+.light-theme .auth-form-container {
+    background-color: var(--bg-color);
+}
