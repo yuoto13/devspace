@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSpace - Социальная сеть для программистов</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link id="theme-style" rel="stylesheet" href="css/light-theme.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">D</div>
+                    <span>DevSpace</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Возможности</a>
+                    <a href="#demo">Демо-проекты</a>
+                    <a href="#testimonials">Отзывы</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+                <div class="auth-buttons">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round">
+                                <div class="sun-moon">
+                                    <div class="sun"></div>
+                                    <div class="moon"></div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <a href="login.html" class="btn btn-outline">Войти</a>
+                    <a href="signup.html" class="btn btn-primary">Регистрация</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">Объединяем разработчиков по всему миру</h1>
+            <p class="fade-in-delay">DevSpace — социальная сеть для разработчиков, где можно демонстрировать свои проекты, делиться опытом и находить единомышленников</p>
+            <div class="hero-buttons fade-in-delay-2">
+                <a href="signup.html" class="btn btn-primary">Присоединиться</a>
+                <a href="#features" class="btn btn-outline">Узнать больше</a>
+            </div>
+            <div class="hero-image-container">
+                <img src="/api/placeholder/1000/600" alt="DevSpace Platform Preview" class="hero-image slide-up" />
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Почему DevSpace</h2>
+                <p>Мы создали платформу, которая объединяет разработчиков со всего мира</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card fade-in-scroll">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Демо-версии проектов</h3>
+                    <p>Демонстрируйте свои проекты прямо на платформе, без необходимости разворачивать их где-то еще</p>
+                </div>
+                <div class="feature-card fade-in-scroll">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Умный поиск</h3>
+                    <p>Находите интересные проекты и талантливых разработчиков в пару кликов</p>
+                </div>
+                <div class="feature-card fade-in-scroll">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Геймификация</h3>
+                    <p>Зарабатывайте достижения и поднимайтесь в рейтинге лучших разработчиков</p>
+                </div>
+                <div class="feature-card fade-in-scroll">
+                    <div class="feature-icon">📱</div>
+                    <h3>Лента активности</h3>
+                    <p>Следите за обновлениями проектов и активностью людей, которые вам интересны</p>
+                </div>
+                <div class="feature-card fade-in-scroll">
+                    <div class="feature-icon">👥</div>
+                    <h3>Сообщество</h3>
+                    <p>Общайтесь с единомышленниками, получайте обратную связь и находите соавторов</p>
+                </div>
+                <div class="feature-card fade-in-scroll">
+                    <div class="feature-icon">📊</div>
+                    <h3>Топы проектов</h3>
+                    <p>Узнавайте о самых популярных и инновационных проектах в сообществе</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Demo Section -->
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-content slide-in-left">
+                    <h2>Показывайте свои проекты в действии</h2>
+                    <p>В отличие от GitHub, где видны только исходники, на DevSpace вы можете продемонстрировать свой проект в работе. Загрузите демо-версию, и пользователи смогут протестировать ваш проект прямо на платформе.</p>
+                    <a href="#" class="btn btn-primary">Смотреть проекты</a>
+                </div>
+                <div class="demo-image slide-in-right">
+                    <img src="/api/placeholder/600/400" alt="DevSpace Demo Feature" />
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Отзывы разработчиков</h2>
+                <p>Что говорят разработчики, которые уже используют DevSpace</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card pop-in">
+                    <p class="testimonial-text">«DevSpace полностью изменил мой подход к демонстрации проектов. Теперь я могу показать, как работает мой код, а не просто делиться ссылкой на репозиторий.»</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">А</div>
+                        <div>
+                            <p class="author-name">Александр К.</p>
+                            <p class="author-title">Full-stack разработчик</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card pop-in delay-1">
+                    <p class="testimonial-text">«Система достижений мотивирует создавать более качественные проекты. Я стал чаще завершать начатое и улучшать свой код.»</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">М</div>
+                        <div>
+                            <p class="author-name">Мария С.</p>
+                            <p class="author-title">Frontend-разработчик</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card pop-in delay-2">
+                    <p class="testimonial-text">«Благодаря DevSpace я нашел соавторов для своего проекта и получил ценную обратную связь от сообщества. Это бесценно!»</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">Д</div>
+                        <div>
+                            <p class="author-name">Дмитрий П.</p>
+                            <p class="author-title">Backend-разработчик</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="bounce-in">Станьте частью сообщества разработчиков</h2>
+            <p class="bounce-in delay-1">Присоединяйтесь к DevSpace сегодня и начните делиться своими проектами, находить единомышленников и развиваться вместе с сообществом</p>
+            <div class="cta-buttons bounce-in delay-2">
+                <a href="signup.html" class="btn btn-white">Зарегистрироваться</a>
+                <a href="#features" class="btn btn-transparent">Узнать больше</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">D</div>
+                        <span>DevSpace</span>
+                    </div>
+                    <p>Социальная платформа для разработчиков, объединяющая код, демонстрацию и сообщество в одном месте.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">F</a>
+                        <a href="#" class="social-icon">T</a>
+                        <a href="#" class="social-icon">I</a>
+                        <a href="#" class="social-icon">G</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Платформа</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Возможности</a></li>
+                        <li><a href="#">Демо-проекты</a></li>
+                        <li><a href="#">Рейтинги</a></li>
+                        <li><a href="#">Достижения</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Сообщество</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Блог</a></li>
+                        <li><a href="#">Форум</a></li>
+                        <li><a href="#">События</a></li>
+                        <li><a href="#">Хакатоны</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Компания</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Карьера</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Правовая информация</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 DevSpace. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/theme-switcher.js"></script>
+</body>
+</html>
