@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeSphere - Social Network for Developers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>Code<span>Sphere</span></h1>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Try Demo</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="background-animation">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="gradient">
+            <stop offset="0%" stop-color="#ffcc00" />
+            <stop offset="100%" stop-color="#00ffff" />
+          </linearGradient>
+        </defs>
+        <path d="M0,0 Q50,25 100,0 T100,100 T0,100 Z" fill="url(#gradient)" />
+      </svg>
+    </div>
+    <div class="hero-content">
+      <h2>Build, Share, and Collaborate with CodeSphere</h2>
+      <p>A social network for developers to explore, learn, and create.</p>
+      <button class="btn btn-primary">Join Now</button>
+      <button class="btn btn-secondary">Learn More</button>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About CodeSphere</h2>
+    <p>CodeSphere is a platform designed for developers to connect, share knowledge, and collaborate on projects. Explore articles, test code in real-time, and interact with live demos.</p>
+  </section>
+
+  <section id="features" class="features">
+    <h2>Key Features</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <img src="article-icon.png" alt="Article Icon">
+        <h3>Articles & Tutorials</h3>
+        <p>Browse through the latest tech articles and tutorials.</p>
+      </div>
+      <div class="card">
+        <img src="code-editor-icon.png" alt="Code Editor Icon">
+        <h3>Interactive Code Editor</h3>
+        <p>Test your code in real-time with our built-in editor.</p>
+      </div>
+      <div class="card">
+        <img src="demo-icon.png" alt="Demo Icon">
+        <h3>Live Demos</h3>
+        <p>Explore interactive demos of popular projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="demo">
+    <h2>Try Our Interactive Demo</h2>
+    <p>Experience CodeSphere's features by testing a demo project.</p>
+    <div class="demo-container">
+      <iframe src="https://codesandbox.io/s/your-demo-project" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button class="btn btn-primary" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2023 CodeSphere. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
